@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "refugees-shelter",
+  "private_key_id": "eabda0aae48197d0590b6803a2cc90119a74af66",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC4sNMB/aIVuBG6\nRKMtzaQ7fwbBK715oiCSGBguoapzZt+pg/26GKcvXHbCV6LaUifaNTflyOiT0OKd\n3q5XunH+HhOeu7kAnnme2juM7/UBABPjg7wC0qjHAEHd6/obCCBQCbl+/LL6UXAP\nVtGwPvAtfifOAjFWduA7e90vlnV+aa/aGI0oWlTltqTOOz4e1q3PbbS5avnmhoEy\nkprcfJT72iTp0JYplPeKobvcgajsNigSBNw0lkjvs1yJCssg1TLrHT7vJO58WjAP\noc7paYVA+zmKz/8aNvcJ3yzgjFO2V5eVhNz6Bo78Z+wGY8wET2XBocFOiLbBumX6\n9k2BXeFFAgMBAAECggEAAxR6rzkr9SqfmaGyZhkTVm5hhPS/SBk3Rx9KvjvEYyUB\nsSY6I8hsd53xon9Y7ddH5wB3xaxO/A04zbDBD/zB7FWcf7kaJBO3WafCdp6XPwkY\ngqvgzreHpAXx3GaB+S9KAhcfbSnth5okOA5pGKjXd9LAjVO8dnh2CmoyUgfFrI18\nX7XZUHblugzgRvGgZFgmYYQeMGDyBc0LFAD09daUoiPqRk0CfdrxohZmOZs97mct\n95azXsorvXPhSqBOcQMbG0d98xmr2EeqpTsOqcASmWWVFUGiqDbtVV/67FbsBtb6\nuT8cXrauVJK2zWGpWhNfEBFA8g6QmeBeZOp5MPPMwwKBgQDsUF0Rj0iP8900JiZl\niE84eGe9yBS1lwUKP1D2C5mn+0bTBA+E03LjQyrpqomqCPBabX0G7omyN+4ARpQC\nlFcXAcosS4zctSjzkVu2Dj2+mAVliHH3/dMK6hYNT/LgxLliq4/1hUH2yuDvR/2C\nrbR9S2vweSLmPi5YeKDaZCyVhwKBgQDIE4sGNQ1xAEwryLZr8bPxfqi99Ty950o/\nV6JBsyEWflBVHANNzNqsn6l53wqO4/MMjhr1MtDRocq1EOJQYSpGpwNyZuqD/q+n\n7g5OvclVP4eTdzLMb+zFJ2zVIz+zv5MIReYAxxbEPJe/VegY6eKrBf0YSRs9v0RQ\nZk6ZLXUF0wKBgQDSTEomoE5A3RJToEe3P3DQnkYkG/RiDX1Muz//Vh9t4C4NB6YP\n3GR3XoTH4R4VlVLgBmOnUYx0b1V8JVL+YKiILu2OMcWvfABvkUH+Z/oGrR7QVnal\n7Nps8hihzC4mXKtl5at9IROs3qsCBhzSuGbQwdfS7tph76Aq116+Ozt57QKBgEhU\n8GTdFy/sKJ2HoZOivSgoXz7VgxEwpeICf5F6/hJQtiAe0X71+XSBAFcj8IA6HqtC\nULKmnWG8OTl+kiL3Db6fMJrSZCQ2FjEC2j9TU48zOYNxi3bnW9Tm7OydIrGMJ87M\n3lsXnr5xHXc5yn//RkgIETkPbP7EwCDE69Nq4KyrAoGAHd/zINFnRAsfzfxCKocM\nFvKsDieJumuOnFxL6svPt58MP3ZLobFJLzJ5awDS7u9vmPFK2FaKkVTK3eEqtRBE\nC+GpkFB6YHYCfxTVAlIQOh/k6xBtnULrhCEdOqUrnMo2qcec8D23YRiRtVESPWdA\nh8ed22Z108tV7xHevQr5SZw=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-gjq12@refugees-shelter.iam.gserviceaccount.com",
+  "client_id": "110615338025428555120",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-gjq12%40refugees-shelter.iam.gserviceaccount.com"
+}
