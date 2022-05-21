@@ -1,0 +1,15 @@
+.shelter-card {
+  width: 300px;
+}
+
+.img-responsive {
+  height: 200px;
+}
+
+.description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  height: 100px;
+}

@@ -1,0 +1,7 @@
+.welcome_page_wrapper {
+  background-image: url("../../assets/images/welcome_page_background.jpg");
+  background-repeat: no-repeat;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}

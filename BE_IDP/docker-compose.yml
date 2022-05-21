@@ -1,0 +1,116 @@
+version: '3'
+
+services:
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090
+    networks:
+      - monitoring
+      - visualizing
+
+  app:
+    image: 'refugees-shelter:latest'
+    build:
+      context: .
+    container_name: app
+    depends_on:
+      - db
+    ports:
+      - 8080:8080
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/refugees_aid
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=student
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.postgresql.Driver
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_JPA_SHOW_SQL=true
+      - SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL=true
+      - SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT=org.hibernate.dialect.PostgreSQL95Dialect
+      - SERVER_SERVLET_CONTEXT_PATH=/refugees-shelter
+      - SERVER_PORT=8080
+    logging:
+      driver: loki
+      options:
+        loki-url: http://host.docker.internal:3100/loki/api/v1/push
+        loki-external-labels: job=myjob,owner=radu,environment=development
+    networks:
+      - monitoring
+      - logging
+
+  db:
+    image: 'postgres:13.1-alpine'
+    container_name: db
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=student
+      - POSTGRES_DB=refugees_aid
+    volumes:
+      - ./scripts/create.sql:/docker-entrypoint-initdb.d/create.sql
+      - ./scripts/data.sql:/docker-entrypoint-initdb.d/data.sql
+    logging:
+      driver: loki
+      options:
+        loki-url: http://host.docker.internal:3100/loki/api/v1/push
+        loki-external-labels: job=myjob,owner=radu,environment=development
+    networks:
+      - monitoring
+      - logging
+
+  app-frontend:
+    image: 'frontend:latest'
+    build:
+      context: .
+    container_name: frontend
+    ports:
+      - 80:80
+    links:
+      - app
+    logging:
+      driver: loki
+      options:
+        loki-url: http://host.docker.internal:3100/loki/api/v1/push
+        loki-external-labels: job=myjob,owner=radu,environment=development
+    networks:
+        - monitoring
+        - logging
+
+  loki:
+    image: grafana/loki
+    volumes:
+      - ./loki/loki.yml:/etc/config/loki.yml
+      - ./loki/wal:/wal
+    entrypoint:
+      - /usr/bin/loki
+      - -config.file=/etc/config/loki.yml
+    ports:
+      - 3100:3100
+    networks:
+      - logging
+      - visualizing
+
+  grafana:
+    image: grafana/grafana
+    volumes:
+      - grafana-volume:/var/lib/grafana
+    ports:
+      - 3000:3000
+    depends_on:
+      - loki
+    deploy:
+      placement:
+        constraints: [ node.role == manager ]
+    networks:
+      - visualizing
+
+networks:
+  monitoring:
+  logging:
+  visualizing:
+
+volumes:
+  grafana-volume:
